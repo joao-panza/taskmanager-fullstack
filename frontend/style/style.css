@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body{
+    background-image: linear-gradient(90deg, #686868, #062c3d);
+}
+
+main{
+    width: 40%;
+    padding: 110px 10px;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    cursor: pointer;
+}
+
+.add-form{
+    display: flex;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.input-task{
+    padding: 10px 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    flex: 1;
+    background-color: #181a1a;
+    font-size: 20px;
+    height: 50px;
+    color: white;
+    transition: background-color 0.3s ease 0.05s;
+}
+
+.input-task:hover{
+    background-color: rgb(10, 10, 10);
+}
+
+.new-task-button{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px 20px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgb(247, 226, 223);;
+    transition: box-shadow 0.3s ease 0.01s;
+}
+
+.new-task-button:hover{
+    box-shadow: rgb(255, 255, 255) 0 0 8px;
+}
+
+.task-ul{
+    min-width: 25%;
+    list-style: none;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    flex: 1;
+    background-color: #181a1a;
+    font-size: 20px;
+    height: 50px;
+    color: grey;
+    margin-bottom: 15px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #192024;
+}
+
+.btn-complete{
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: #949FA4;
+    transition: box-shadow 0.3s ease 0.01s;
+    border: none;
+}
+
+.btn-complete:hover{
+    box-shadow: white 0 0 8px;
+}
+
+.btn-delete{
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: #949FA4;
+    transition: box-shadow 0.3s ease 0.01s;
+    border: none;
+}
+
+.btn-delete:hover{
+    box-shadow: white 0 0 8px;
+}
+
