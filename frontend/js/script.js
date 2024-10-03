@@ -37,6 +37,17 @@ const deleteTask = async (id) =>{
     loadTasks();
 }
 
+const updateTask = async (task) => {
+    const { id, title, status, created_at } = task;
+
+    await fetch(`http://localhost:3333/tasks/${id}`,{
+        method: 'put',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, status }),
+    });
+    loadTasks();
+}
+
 // Responsável por criar o elemento html 
 const createElement = (tag, innerText = '', innerHTML = '') => {
     const element = document.createElement(tag);
@@ -64,6 +75,7 @@ const createTask = (task) =>{
     completeButton.classList.add('btn-complete');
     deleteButton.classList.add('btn-delete');
 
+    completeButton.addEventListener('click', () => updateTask(id));
     deleteButton.addEventListener('click', () => deleteTask(id));
 
     divButtons.appendChild(completeButton);
