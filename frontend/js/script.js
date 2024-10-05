@@ -37,6 +37,7 @@ const deleteTask = async (id) =>{
     loadTasks();
 }
 
+// Atualiza o status para concluída
 const updateTask = async (task) => {
     const { id, title, status, created_at } = task;
 
@@ -90,6 +91,10 @@ const createTask = (task) =>{
 // Carrega as tarefas na tela com base no retorno da função fetchTasks
 const loadTasks = async () => {
     const tasks = await fetchTasks ();
+
+    // Limpa a lista antes de carregar as tasks
+    ul.innerHTML = '';
+    
     tasks.forEach((task) => {
         const li = createTask(task);
         ul.appendChild(li);
