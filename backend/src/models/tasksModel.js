@@ -23,11 +23,11 @@ const deleteTask = async (id) => {
     return deletedTask;
 };
 
-// Atualiza o título de uma tarefa a partir do seu id
+// Atualiza o status de uma tarefa a partir do seu id
 const updateTask = async (id, task) => {
-    const { title, status } = task;
-    const query = 'UPDATE TASKS SET title = ?, status = ? WHERE id = ?';
-    const [updatedTask] = await connection.execute(query, [title, status, id]);
+    const { status } = task;
+    const query = 'UPDATE TASKS SET status = ? WHERE id = ?';
+    const [updatedTask] = await connection.execute(query, [status, id]);
     return updatedTask;
 };
 
