@@ -43,7 +43,6 @@ const completeTask = async (id) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'Concluída' })
     });
-    
 }
 
 // Responsável por criar o elemento html 
