@@ -62,7 +62,7 @@ const createElement = (tag, innerText = '', innerHTML = '') => {
 // Insere a tag dentro do html 
 const createTask = (task) =>{
     const { id, title, status, created_at } = task;
-    const li = createElement('li');
+    const listItem = createElement('li');
     const liTitle = createElement('div', title);
     const divButtons = createElement('div');
 
@@ -72,16 +72,19 @@ const createTask = (task) =>{
     completeButton.classList.add('btn-complete');
     deleteButton.classList.add('btn-delete');
 
-    completeButton.addEventListener('click', () => completeTask(id));
+    completeButton.addEventListener('click', () => {
+        completeTask(id);
+        liTitle.style.textDecoration = 'line-through';
+    });
     deleteButton.addEventListener('click', () => deleteTask(id));
 
     divButtons.appendChild(completeButton);
     divButtons.appendChild(deleteButton);
 
-    li.appendChild(liTitle);
-    li.appendChild(divButtons);
+    listItem.appendChild(liTitle);
+    listItem.appendChild(divButtons);
 
-    return li;
+    return listItem;
 }
 
 // Carrega as tarefas na tela com base no retorno da função fetchTasks
@@ -92,7 +95,14 @@ const loadTasks = async () => {
     ul.innerHTML = '';
     
     tasks.forEach((task) => {
+
         const li = createTask(task);
+
+        const { title } = task;
+        if(title==='Concluída'){
+            console.log('OPA OPA OPA');
+        }
+
         ul.appendChild(li);
     });
 }
