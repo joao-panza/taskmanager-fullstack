@@ -98,11 +98,11 @@ const loadTasks = async () => {
 
         const li = createTask(task);
 
-        const { title } = task;
-        if(title==='Concluída'){
-            console.log('OPA OPA OPA');
+        const { status } = task;
+        if(status==='Concluída'){
+            li.style.textDecoration = 'line-through';
         }
-
+        
         ul.appendChild(li);
     });
 }
