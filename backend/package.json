@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch src/server.js"
+    "dev": "node --watch src/server.js",
+    "compose-up": "docker compose --env-file ./.env up -d",
+    "compose-down": "docker compose down",
+    "compose-up-fresh": "docker compose --env-file ./.env up -d -V"
   },
   "keywords": [],
   "author": "",
